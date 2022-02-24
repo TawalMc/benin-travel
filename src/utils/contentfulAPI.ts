@@ -40,6 +40,13 @@ export const getTownList = async (): Promise<string[]> => {
   return list[0].townList
 }
 
+export const getExistingTowns = async (): Promise<string[]> => {
+  const list = await getAllTowns()
+  const townList = list.map((elt) => elt.town)
+
+  return townList
+}
+
 export const getDepartment = async () => {}
 
 /**
