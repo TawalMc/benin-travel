@@ -10,10 +10,11 @@ const initialState: State = {
   townsList: []
 }
 
-const changeTown = (next: boolean, length: number, old: number): number => {
+/* const changeTown = (next: boolean, length: number, old: number): number => {
   const unit = next ? 1 : -1
   return updateIndex(old + unit, length)
 }
+ */
 
 const actions = {
   updateTown:

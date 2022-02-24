@@ -9,6 +9,10 @@ const client = createClient({
   accessToken: accessToken!
 })
 
+/**
+ *
+ * @returns
+ */
 export const getAllTowns = async (): Promise<CarousselTown[]> => {
   const entries = await client.getEntries({
     content_type: "town"
@@ -19,10 +23,32 @@ export const getAllTowns = async (): Promise<CarousselTown[]> => {
   return towns
 }
 
-type ChildrenTownContentful = Entry<{ description: string; img: Asset }>
+/**
+ *
+ */
+type GetTownListType = {
+  country: string
+  townList: string[]
+}
+
+export const getTownList = async (): Promise<string[]> => {
+  const entries = await client.getEntries<GetTownListType>({
+    content_type: "beninTowns"
+  })
+
+  const list = entries.items.map((elt) => elt.fields)
+  return list[0].townList
+}
+
+export const getDepartment = async () => {}
+
+/**
+ *
+ */
+type ChildrenTownContentfulType = Entry<{ description: string; img: Asset }>
 
 const formatContentfulResponse = (data: any): CarousselTown => {
-  const getChildren = (elt: ChildrenTownContentful) => {
+  const getChildren = (elt: ChildrenTownContentfulType) => {
     return {
       description: elt.fields.description,
       img: `https:${elt.fields.img.fields.file.url}`
@@ -38,7 +64,7 @@ const formatContentfulResponse = (data: any): CarousselTown => {
     language: data.language,
     district: data.district,
     food: data.food,
-    children: data.children.map((elt: ChildrenTownContentful) =>
+    children: data.children.map((elt: ChildrenTownContentfulType) =>
       getChildren(elt)
     )
   }

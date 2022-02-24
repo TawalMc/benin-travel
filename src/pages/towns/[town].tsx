@@ -1,7 +1,7 @@
 import { Caroussel } from "@/components/Caroussel"
 import { Loading } from "@/components/Loading"
-import { TownList, Towns } from "@/data/towns"
-import { getAllTowns } from "@/utils/contentfulAPI"
+import { TownList } from "@/data/towns"
+import { getAllTowns, getTownList } from "@/utils/contentfulAPI"
 import { useTown } from "@/utils/state"
 import { CarousselTown } from "@/utils/type"
 import { VStack } from "@chakra-ui/react"
@@ -34,7 +34,8 @@ const Town: NextPage<TownProps> = (props) => {
 export default Town
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = TownList.map((town) => ({
+  const townList = await getTownList()
+  const paths = townList.map((town) => ({
     params: { town: town.toLowerCase() }
   }))
 

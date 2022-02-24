@@ -5,13 +5,16 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "other_script": "node other/fillContentfulEntries.js"
   },
   "dependencies": {
     "@chakra-ui/react": "^1.8.3",
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
+    "axios": "^0.26.0",
     "contentful": "^9.1.10",
+    "contentful-management": "^8.1.3",
     "framer-motion": "^6.2.6",
     "next": "12.0.10",
     "react": "17.0.2",
