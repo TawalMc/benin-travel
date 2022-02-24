@@ -34,7 +34,8 @@ const Town: NextPage<TownProps> = (props) => {
 export default Town
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const townList = await getTownList()
+  // const townList = await getTownList()
+  const townList = TownList
   const paths = townList.map((town) => ({
     params: { town: town.toLowerCase() }
   }))
