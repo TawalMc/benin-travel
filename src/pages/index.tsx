@@ -1,3 +1,4 @@
+import { SEO } from "@/components/SEO"
 import {
   Box,
   Button,
@@ -15,6 +16,7 @@ import Link from "next/link"
 const Home: NextPage = () => {
   return (
     <AppLayout>
+      <SEO />
       <Box width={"100vw"} height={"100vh"} color={"white"}>
         <Stack minH={"100vh"} direction={{ base: "column", md: "row" }}>
           <Flex p={8} flex={1} align={"center"} justify={"center"}>
@@ -82,7 +84,7 @@ const Home: NextPage = () => {
             <Image
               alt={"Login Image"}
               objectFit={"cover"}
-              src={"../../images/abomey.png"}
+              src={"https://benin-travel.vercel.app/images/abomey.png"}
             />
           </Flex>
         </Stack>

@@ -83,7 +83,7 @@ const About: NextPage = () => {
             <Image
               alt={"Login Image"}
               objectFit={"cover"}
-              src={"../../images/tawal.jpg"}
+              src={"https://benin-travel.vercel.app/images/tawal.jpg"}
             />
           </Flex>
         </Stack>
