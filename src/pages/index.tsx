@@ -46,16 +46,13 @@ const Home: NextPage = () => {
                 </Text>
               </Heading>
               <Text fontSize={{ base: "md", lg: "lg" }} color={"gray.500"}>
-                Envie d'explorer le Bénin? De découvrir notre culture, nos mets,
+                {`Envie d'explorer le Bénin? De découvrir notre culture, nos mets,
                 nos langues ou simplement se connecter à l'histoire de nos
                 villes. Démarrez votre exploration des villes du Bénin
-                maintenant.
+                maintenant.`}
               </Text>
-              {/*  <Text fontStyle={"italic"} color={"gray.500"}>
-                Pleins de fonctionnalités à venir
-              </Text> */}
               <Stack direction={{ base: "column", md: "row" }} spacing={4}>
-                <Link href={"/towns/cotonou"}>
+                <Link href={"/towns/cotonou"} passHref>
                   <Button
                     rounded={"0"}
                     bg={"yellow.500"}
@@ -67,7 +64,7 @@ const Home: NextPage = () => {
                     Découvrir
                   </Button>
                 </Link>
-                <Link href={"/about"}>
+                <Link href={"/about"} passHref>
                   <Button
                     rounded={"0"}
                     bgColor={"gray.400"}

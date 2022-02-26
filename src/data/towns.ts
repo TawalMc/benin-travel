@@ -1,7 +1,7 @@
 import { CarousselTown } from "@/utils/type"
 
 export const TownList: string[] = ["Cotonou", "Abomey"]
-
+/* 
 export const Towns: Array<CarousselTown> = [
   {
     country: "Benin",
@@ -16,12 +16,16 @@ export const Towns: Array<CarousselTown> = [
       {
         description:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus iusto explicabo consequatur itaque, blanditiis excepturi eius accusantium saepe sed numquam.",
-        img: "../images/cotonou.webp"
+        img: "../images/cotonou.webp",
+				author: "any"
+				authorLink: "#"
       },
       {
         description:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus iusto explicabo consequatur itaque, blanditiis excepturi eius accusantium saepe sed numquam.",
-        img: "../images/parakou.jpeg"
+        img: "../images/parakou.jpeg",
+				author: "any"
+				authorLink: "#"
       }
     ]
   },
@@ -38,13 +42,18 @@ export const Towns: Array<CarousselTown> = [
       {
         description:
           "Ipsum Lorem dolor sit amet consectetur adipisicing elit. Minus iusto explicabo consequatur itaque, blanditiis excepturi eius accusantium saepe sed numquam.",
-        img: "../images/abomey.png"
+        img: "../images/abomey.png",
+				author: "any"
+				authorLink: "#"
       },
       {
         description:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus iusto explicabo consequatur itaque, blanditiis excepturi eius accusantium saepe sed numquam.",
-        img: "../images/parakou.jpeg"
+        img: "../images/parakou.jpeg",
+				author: "any"
+				authorLink: "#"
       }
     ]
   }
 ]
+ */

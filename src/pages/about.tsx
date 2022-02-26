@@ -65,7 +65,7 @@ const About: NextPage = () => {
                 Pleins de fonctionnalités à venir
               </Text>
               <Stack direction={{ base: "column", md: "row" }} spacing={4}>
-                <Link href={"/"}>
+                <Link href={"/"} passHref>
                   <Button
                     rounded={"0"}
                     bgColor={"gray.400"}
