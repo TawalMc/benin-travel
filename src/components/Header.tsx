@@ -60,15 +60,15 @@ type Item = {
 
 const NAV_ITEMS: Array<Item> = [
   {
-    label: "Home",
+    label: "Accueil",
     href: "/"
   },
   {
-    label: "Explore",
+    label: "Explorer",
     href: "/towns/cotonou"
   },
   {
-    label: "About",
+    label: "A propos",
     href: "/about"
   }
 ]

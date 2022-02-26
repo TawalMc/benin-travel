@@ -1,11 +1,7 @@
 import { Caroussel } from "@/components/Caroussel"
 import { Loading } from "@/components/Loading"
 import { TownList } from "@/data/towns"
-import {
-  getAllTowns,
-  getExistingTowns,
-  getTownList
-} from "@/utils/contentfulAPI"
+import { getAllTowns, getExistingTowns } from "@/utils/contentfulAPI"
 import { useTown } from "@/utils/state"
 import { CarousselTown } from "@/utils/type"
 import { VStack } from "@chakra-ui/react"

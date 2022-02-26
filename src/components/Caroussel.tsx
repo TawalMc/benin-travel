@@ -1,6 +1,11 @@
 import { updateIndex } from "@/utils/libs"
 import { useTown } from "@/utils/state"
-import { CarousselTown, FirstPartTown, SecondPartTown } from "@/utils/type"
+import {
+  AuthorCredit,
+  CarousselTown,
+  FirstPartTown,
+  SecondPartTown
+} from "@/utils/type"
 import {
   Box,
   Divider,
@@ -8,6 +13,7 @@ import {
   Heading,
   Icon,
   IconButton,
+  Link,
   Stack,
   Text,
   VStack
@@ -68,6 +74,8 @@ export const Caroussel = (props: CarousselProps) => {
         {...props}
         currentDescImg={currDescImg + 1}
         totalDescImg={props.children.length}
+        author={props.children[currDescImg].author}
+        authorLink={props.children[currDescImg].authorLink}
       />
       <CarousselButtons
         changeDescAndImg={changeDescAndImg}
@@ -148,14 +156,29 @@ const CarousselTop = (
 /**
  *
  */
-type CarousselBottomProps = SecondPartTown & {
-  currentDescImg: number
-  totalDescImg: number
-}
+type CarousselBottomProps = AuthorCredit &
+  SecondPartTown & {
+    currentDescImg: number
+    totalDescImg: number
+  }
 
 const CarousselBottom = (props: CarousselBottomProps): JSX.Element => {
   return (
     <VStack h={"35%"} w={"100%"} color={"black"} justify={"center"}>
+      {props.author !== "any" && (
+        <Link
+          color={"#ffffff"}
+          href={props.authorLink}
+          pos={"absolute"}
+          bottom={"60px"}
+          left={"0"}
+          isExternal
+          fontStyle={"italic"}
+          fontSize={"sm"}
+        >
+          @{props.author}
+        </Link>
+      )}
       <HStack
         h={"48px"}
         w={["100%", "100%", "50%"]}

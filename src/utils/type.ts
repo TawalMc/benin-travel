@@ -17,7 +17,12 @@ export type SecondPartTown = {
   food: string
 }
 
-export type CarousselTownChild = {
+export type AuthorCredit = {
+  author: string
+  authorLink: string
+}
+
+export type CarousselTownChild = AuthorCredit & {
   description: string
   img?: string
 }

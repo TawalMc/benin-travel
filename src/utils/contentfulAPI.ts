@@ -52,13 +52,20 @@ export const getDepartment = async () => {}
 /**
  *
  */
-type ChildrenTownContentfulType = Entry<{ description: string; img: Asset }>
+type ChildrenTownContentfulType = Entry<{
+  description: string
+  img?: Asset
+  author?: string
+  authorLink?: string
+}>
 
 const formatContentfulResponse = (data: any): CarousselTown => {
   const getChildren = (elt: ChildrenTownContentfulType) => {
     return {
       description: elt.fields.description,
-      img: `https:${elt.fields.img.fields.file.url}`
+      author: elt.fields.author,
+      authorLink: elt.fields.authorLink,
+      img: `https:${elt.fields.img?.fields.file.url}`
     }
   }
 
