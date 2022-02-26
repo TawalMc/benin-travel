@@ -53,6 +53,8 @@ export const Caroussel = (props: CarousselProps) => {
     )
     actions.updateTown(townIndex)
 
+    // console.log(`/towns/${state.townsList[townIndex].toLowerCase()}`)
+
     router.push(`/towns/${state.townsList[townIndex].toLowerCase()}`)
   }
 

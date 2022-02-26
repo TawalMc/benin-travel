@@ -1,3 +1,5 @@
+import { SEO } from "@/components/SEO"
+import { SEOLinks } from "@/utils/constants"
 import {
   Box,
   Button,
@@ -15,6 +17,10 @@ import Link from "next/link"
 const About: NextPage = () => {
   return (
     <AppLayout>
+      <SEO
+        title={`About | ${SEOLinks.title}`}
+        description={`About | ${SEOLinks.description}`}
+      />
       <Box width={"100vw"} height={"100vh"} color={"white"}>
         <Stack minH={"100vh"} direction={{ base: "column", md: "row" }}>
           <Flex p={8} flex={1} align={"center"} justify={"center"}>
@@ -52,10 +58,13 @@ const About: NextPage = () => {
                 gratuitement, sans publicité.
               </Text>
               <Text fontSize={{ base: "md", lg: "lg" }} color={"gray.500"}>
-                Le projet a été développé par Tawaliou ALAO, développeur web
-                béninois qui tente de faire connaître son pays au monde entier.
-                Retrouvez dans le coin droit inférieur, les liens vers mes
-                comptes sociaux.
+                Le projet a été développé par{" "}
+                <Text as={"span"} fontWeight={"bold"} color={"#000000"}>
+                  Tawaliou ALAO
+                </Text>
+                , développeur web béninois qui tente de faire connaître son pays
+                au monde entier. Retrouvez dans le coin droit inférieur, les
+                liens vers mes comptes sociaux.
               </Text>
               <Text fontSize={{ base: "md", lg: "lg" }} color={"gray.500"}>
                 Désolé pour le chargement des images, un peu trop lourdes
@@ -83,7 +92,9 @@ const About: NextPage = () => {
             <Image
               alt={"Login Image"}
               objectFit={"cover"}
-              src={"https://benin-travel.vercel.app/images/tawal.jpg"}
+              src={
+                "https://tawaldevuniverse.vercel.app/static/images/myphoto.png"
+              }
             />
           </Flex>
         </Stack>
