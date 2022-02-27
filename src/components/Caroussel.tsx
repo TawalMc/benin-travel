@@ -23,8 +23,8 @@ import { useState } from "react"
 import {
   RiArrowLeftCircleLine,
   RiArrowRightCircleLine,
+  RiCake3Line,
   RiCommunityLine,
-  RiShoppingCart2Line,
   RiTeamLine,
   RiVolumeUpLine
 } from "react-icons/ri"
@@ -199,7 +199,7 @@ const CarousselBottom = (props: CarousselBottomProps): JSX.Element => {
         </HStack>
         <Divider orientation={"vertical"} h={"60%"} />
         <HStack>
-          <Icon as={RiShoppingCart2Line} boxSize={"1.5em"} />
+          <Icon as={RiCake3Line} boxSize={"1.5em"} />
           <Text>{props.food}</Text>
         </HStack>
         <Divider orientation={"vertical"} h={"60%"} />
