@@ -1,14 +1,13 @@
 import { Caroussel } from "@/components/Caroussel"
 import { Loading } from "@/components/Loading"
 import { SEO } from "@/components/SEO"
-import { TownList } from "@/data/towns"
 import { SEOLinks } from "@/utils/constants"
 import { getAllTowns, getExistingTowns } from "@/utils/contentfulAPI"
 import { useTown } from "@/utils/state"
 import { CarousselTown } from "@/utils/type"
 import { VStack } from "@chakra-ui/react"
 import { AppLayout } from "layouts/AppLayouts"
-import { GetStaticPaths, GetStaticProps, NextPage } from "next"
+import { GetServerSideProps, NextPage } from "next"
 import { useRouter } from "next/router"
 import { useEffect } from "react"
 
@@ -39,25 +38,12 @@ const Town: NextPage<TownProps> = (props) => {
 
 export default Town
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const townList = await getExistingTowns()
-
-  const paths = townList.map((town) => ({
-    params: { town: town.toLowerCase() }
-  }))
-
-  // console.log(paths)
-
-  return { paths, fallback: false }
-}
-
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const towns = await getAllTowns()
   const townList = await getExistingTowns()
   const townData = towns.find((elt) => elt.town.toLowerCase() === params!!.town)
 
   return {
-    props: { townData: townData || null, townsList: townList },
-    revalidate: 10
+    props: { townData: townData || null, townsList: townList }
   }
 }
