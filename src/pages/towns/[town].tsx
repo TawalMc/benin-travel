@@ -15,10 +15,12 @@ type TownProps = { townData: CarousselTown; townsList: string[] }
 
 const Town: NextPage<TownProps> = (props) => {
   const router = useRouter()
-  const actions = useTown()[1]
+  const [state, actions] = useTown()
 
   useEffect(() => {
-    actions.updateTownsList(props.townsList)
+    if (state.townsList.length !== 77) {
+      actions.updateTownsList(props.townsList)
+    }
   })
 
   if (router.isFallback) return <Loading />
