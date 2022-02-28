@@ -23,5 +23,6 @@ export const SEOLinks = {
   keywords:
     "bénin, cultures, patrimoines, villes, royaumes, web platform, abomey, parakou, cotonou, porto novo",
   ogImage: "https://benin-travel.vercel.app/benin.jpg",
-  twitterImage: "https://benin-travel.vercel.app/benin.jpg"
+  twitterImage: "https://benin-travel.vercel.app/benin.jpg",
+  brandImage: "https://benin-travel.vercel.app/images/abomey.png"
 }

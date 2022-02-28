@@ -32,10 +32,6 @@ export const SocialMedia = () => {
         <Icon as={RiFacebookFill} boxSize={6} color={"#ffffff"} />
       </Link>
 
-      {/*  <Link href={Media.mail} isExternal>
-        <Icon as={RiMailLine} boxSize={6} color={"#ffffff"} />
-      </Link> */}
-
       <Link href={Media.twitter} isExternal>
         <Icon as={RiTwitterFill} boxSize={6} color={"#ffffff"} />
       </Link>

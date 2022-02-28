@@ -30,6 +30,8 @@ const Town: NextPage<TownProps> = (props) => {
       <SEO
         title={`Town: ${props.townData.town} | ${SEOLinks.title}`}
         description={`Et si on allait à la découverte de ${props.townData.town} | ${SEOLinks.title}`}
+        twitterImage={props.townData.children[0].img}
+        ogImage={props.townData.children[0].img}
       />
       <VStack h={"100vh"} w={"100%"}>
         <Caroussel {...props.townData} />

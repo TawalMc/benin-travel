@@ -19,9 +19,9 @@ export const SEO = ({
   description = SEOLinks.description,
   keywords = SEOLinks.keywords,
   title = SEOLinks.title,
-  ogImage = SEOLinks.ogImage,
+  ogImage = SEOLinks.brandImage,
   ogUrl = websiteLinks.productionUrl,
-  twitterImage = SEOLinks.twitterImage
+  twitterImage = SEOLinks.brandImage
 }: SEOProps) => {
   const router = useRouter()
 
