@@ -3,8 +3,12 @@ import { Icon, Link, VStack } from "@chakra-ui/react"
 import React from "react"
 import {
   RiEarthLine,
+  RiFacebookBoxLine,
+  RiFacebookFill,
+  RiFacebookLine,
   RiGithubFill,
   RiLinkedinFill,
+  RiMailLine,
   RiTwitterFill
 } from "react-icons/ri"
 
@@ -24,20 +28,20 @@ export const SocialMedia = () => {
         md: "0"
       }}
     >
+      <Link href={Media.facebook} isExternal>
+        <Icon as={RiFacebookFill} boxSize={6} color={"#ffffff"} />
+      </Link>
+
+      {/*  <Link href={Media.mail} isExternal>
+        <Icon as={RiMailLine} boxSize={6} color={"#ffffff"} />
+      </Link> */}
+
       <Link href={Media.twitter} isExternal>
         <Icon as={RiTwitterFill} boxSize={6} color={"#ffffff"} />
       </Link>
 
-      <Link href={Media.linkedin} isExternal>
-        <Icon as={RiLinkedinFill} boxSize={6} color={"#ffffff"} />
-      </Link>
-
       <Link href={Media.github} isExternal>
         <Icon as={RiGithubFill} boxSize={6} color={"#ffffff"} />
-      </Link>
-
-      <Link href={Media.website} isExternal>
-        <Icon as={RiEarthLine} boxSize={6} color={"#ffffff"} />
       </Link>
     </VStack>
   )

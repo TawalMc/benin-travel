@@ -2,9 +2,11 @@
  * LINKS
  */
 export const Media = {
+  facebook: "https://web.facebook.com/Benin-Travel-101371785836017",
   twitter: "https://twitter.com/Tawal_Mc",
   linkedin: "https://www.linkedin.com/in/tawaliou-alao-26688614b/",
   github: "https://github.com/TawalMc",
+  mail: "beninexplorationtravel@gmail.com",
   website: "http://tawaldevuniverse.vercel.app/"
 }
 
