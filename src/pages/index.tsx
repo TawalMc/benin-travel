@@ -1,4 +1,5 @@
 import { SEO } from "@/components/SEO"
+import { Subscribe } from "@/components/Subscribe"
 import {
   Box,
   Button,
@@ -78,6 +79,7 @@ const Home: NextPage = () => {
                   </Button>
                 </Link>
               </Stack>
+              <Subscribe />
             </Stack>
           </Flex>
           <Flex flex={1}>

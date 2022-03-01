@@ -19,7 +19,9 @@ Profitez de votre exploration.
 ## Fonctionnalités à venir
 
 - Newsletter (ConverKit ou MailChimp): ❓
+- Formulaire pour que n'importe qui puisse fournir des données (description, image) sur une ville: ❓
 - Page **Aller à** (Liste des villes et aller directement sur une ville): ❓
 - Search (Algolia ou ElasticSearch): ❓
 - Animation des backgrounds: ❓
 - Transition d'une page à une autre: ❓
+- QCM journalières: ❓
