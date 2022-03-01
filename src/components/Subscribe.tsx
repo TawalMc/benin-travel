@@ -41,8 +41,7 @@ export const Subscribe = () => {
         Souscrire à la newsletter
       </FormLabel>
       <FormHelperText mb={"8px"}>
-        Recevez des mails sur les mises à jour et nouvelles fonctionnalités de
-        Benin Travel
+        Recevez des mails sur les mises à jour de Benin Travel
       </FormHelperText>
       <InputGroup size={"md"}>
         <Input
