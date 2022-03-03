@@ -129,11 +129,18 @@ const CarousselTop = (
         justify={"center"}
         align={["flex-end", "flex-end", "flex-start"]}
       >
-        <Box bgColor={"rgba(95, 255, 111, 0.3)"} pl={7} pr={7} pt={4} pb={4}>
+        <Box
+          bgColor={"rgba(90, 90, 90, 0.4)"}
+          /* bgColor={"rgba(95, 255, 111, 0.3)"} */ pl={7}
+          pr={7}
+          pt={4}
+          pb={4}
+        >
           <Text>{props.type}</Text>
         </Box>
         <HStack
-          bgColor={"rgba(95, 255, 111, 0.3)"}
+          /* bgColor={"rgba(95, 255, 111, 0.3)"} */
+          bgColor={"rgba(90, 90, 90, 0.4)"}
           pl={4}
           pr={4}
           pt={4}
@@ -184,7 +191,8 @@ const CarousselBottom = (props: CarousselBottomProps): JSX.Element => {
       <HStack
         h={"48px"}
         w={["100%", "100%", "50%"]}
-        bgColor={"rgba(255, 51, 51, 0.3)"}
+        /* bgColor={"rgba(255, 51, 51, 0.3)"} */
+        bgColor={"rgba(90, 90, 90, 0.4)"}
         pos={"absolute"}
         bottom={"0"}
         left={"0"}

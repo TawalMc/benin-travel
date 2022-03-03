@@ -31,3 +31,17 @@ export type CarousselTown = FirstPartTown &
   SecondPartTown & {
     children: CarousselTownChild[]
   }
+
+export type StateType = "available" | "new" | "coming soon"
+
+export type TownState = {
+  name: string
+  state: StateType
+}
+
+export type DepartmentTownsState = {
+  country: string
+  department: string
+  state: StateType
+  townsList: TownState[]
+}

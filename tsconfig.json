@@ -23,6 +23,6 @@
 			"@/data/*":["data/*"],
 		}
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/utils/gtag.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/utils/gtag.js", "other/fillContentfulEntries.js"],
   "exclude": ["node_modules"]
 }

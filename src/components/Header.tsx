@@ -5,14 +5,24 @@ import {
   Link,
   Menu,
   MenuButton,
+  MenuDivider,
   MenuItem,
-  MenuList
+  MenuList,
+  useDisclosure
 } from "@chakra-ui/react"
-import { RiArrowDownSFill } from "react-icons/ri"
+import {
+  RiArrowDownSFill,
+  RiExternalLinkLine,
+  RiEyeLine,
+  RiHome3Line,
+  RiQuestionLine
+} from "react-icons/ri"
+
+import { ModalTowns } from "./ModalTowns"
 
 export const Header = () => {
   return (
-    <Box position={"absolute"} zIndex={100}>
+    <Box position={"absolute"} zIndex={200}>
       <Menu>
         <MenuButton
           _focus={{
@@ -29,23 +39,71 @@ export const Header = () => {
           Benin Travel
         </MenuButton>
         <MenuList borderRadius={"inherit"}>
-          {NAV_ITEMS.map((item) => (
-            <MenuItem
-              as={Link}
-              href={item.href}
-              key={item.label}
-              _hover={{
-                textDecoration: "none",
-                fontWeight: "bold",
-                border: "none"
-              }}
-            >
-              {item.label}
-            </MenuItem>
-          ))}
+          <MenuItemLink
+            icon={<RiHome3Line size={"1.5em"} />}
+            label={NAV_ITEMS[0].label}
+            href={NAV_ITEMS[0].href}
+          />
+          <MenuItemLink
+            icon={<RiEyeLine size={"1.5em"} />}
+            label={NAV_ITEMS[1].label}
+            href={NAV_ITEMS[1].href}
+          />
+          <MenuItemGoto />
+          <MenuDivider />
+          <MenuItemLink
+            icon={<RiQuestionLine size={"1.5em"} />}
+            label={NAV_ITEMS[2].label}
+            href={NAV_ITEMS[2].href}
+          />
         </MenuList>
       </Menu>
     </Box>
+  )
+}
+
+const MenuItemGoto = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  return (
+    <>
+      <MenuItem
+        _hover={{
+          textDecoration: "none",
+          fontWeight: "bold",
+          border: "none"
+        }}
+        onClick={onOpen}
+        icon={<RiExternalLinkLine size={"1.5em"} />}
+      >
+        Aller à
+      </MenuItem>
+      <ModalTowns isOpen={isOpen} onClose={onClose} />
+    </>
+  )
+}
+
+const MenuItemLink = ({
+  href,
+  label,
+  icon
+}: {
+  href: string
+  label: string
+  icon: any
+}) => {
+  return (
+    <MenuItem
+      as={Link}
+      _hover={{
+        textDecoration: "none",
+        fontWeight: "bold",
+        border: "none"
+      }}
+      href={href}
+      icon={icon}
+    >
+      {label}
+    </MenuItem>
   )
 }
 

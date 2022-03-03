@@ -40,7 +40,7 @@ export const Subscribe = () => {
       <FormLabel color={"#000000"} fontWeight={"bold"}>
         Souscrire à la newsletter
       </FormLabel>
-      <FormHelperText mb={"8px"}>
+      <FormHelperText lineHeight={1.5} mb={"8px"}>
         Recevez des mails sur les mises à jour de Benin Travel
       </FormHelperText>
       <InputGroup size={"md"}>
@@ -60,7 +60,7 @@ export const Subscribe = () => {
         />
         <InputRightElement w={"30%"}>
           <Button
-            h={"95%"}
+            h={"99%"}
             bgColor={"yellow.500"}
             rounded={"0"}
             w={"100%"}

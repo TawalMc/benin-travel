@@ -8,6 +8,7 @@ import { CarousselTown } from "@/utils/type"
 import { VStack } from "@chakra-ui/react"
 import { AppLayout } from "layouts/AppLayouts"
 import { GetServerSideProps, NextPage } from "next"
+import { redirect } from "next/dist/server/api-utils"
 import { useRouter } from "next/router"
 import { useEffect } from "react"
 
@@ -43,11 +44,23 @@ const Town: NextPage<TownProps> = (props) => {
 export default Town
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
-  const towns = await getAllTowns()
-  const townList = await getExistingTowns()
-  const townData = towns.find((elt) => elt.town.toLowerCase() === params!!.town)
+  try {
+    const towns = await getAllTowns()
+    const townList = await getExistingTowns()
+    const townData = towns.find(
+      (elt) => elt.town.toLowerCase() === params!!.town
+    )
 
-  return {
-    props: { townData: townData || null, townsList: townList }
+    return {
+      props: { townData: townData || null, townsList: townList }
+    }
+  } catch (error) {
+    // console.log(error)
+    return {
+      redirect: {
+        destination: "/",
+        permanent: false
+      }
+    }
   }
 }

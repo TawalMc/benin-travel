@@ -1,3 +1,5 @@
+import { Header } from "@/components/Header"
+import { SocialMedia } from "@/components/SocialMedia"
 import { theme } from "@/theme/index"
 import * as ga from "@/utils/gtag"
 import { ChakraProvider } from "@chakra-ui/react"
@@ -21,11 +23,15 @@ function MyApp({ Component, pageProps }: AppProps) {
     }
   }, [router.events])
 
+  useEffect(() => {}, [])
+
   return (
     <ChakraProvider theme={theme}>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
+      <Header />
+      <SocialMedia />
       <Component {...pageProps} />
     </ChakraProvider>
   )

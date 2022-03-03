@@ -7,11 +7,5 @@ type AppLayoutProps = {
 }
 
 export const AppLayout = ({ children }: AppLayoutProps) => {
-  return (
-    <>
-      <Header />
-      <SocialMedia />
-      {children}
-    </>
-  )
+  return <>{children}</>
 }

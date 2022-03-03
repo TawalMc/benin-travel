@@ -67,7 +67,7 @@ const Home: NextPage = () => {
                     Découvrir
                   </Button>
                 </Link>
-                <Link href={"/about"} passHref>
+                {/* <Link href={"/about"} passHref>
                   <Button
                     rounded={"0"}
                     bgColor={"gray.400"}
@@ -77,12 +77,12 @@ const Home: NextPage = () => {
                   >
                     A propos
                   </Button>
-                </Link>
+                </Link> */}
               </Stack>
               <Subscribe />
             </Stack>
           </Flex>
-          <Flex flex={1}>
+          <Flex flex={1} pl={["30px", "0"]} pr={["30px", "0"]}>
             <Image
               alt={"Login Image"}
               objectFit={"cover"}

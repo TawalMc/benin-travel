@@ -22,7 +22,7 @@ export const SocialMedia = () => {
       w={"48px"}
       pos={"absolute"}
       right={0}
-      zIndex={100}
+      zIndex={200}
       bottom={{
         base: "64px",
         md: "0"
