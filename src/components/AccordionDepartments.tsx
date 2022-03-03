@@ -46,7 +46,7 @@ export const AccordionDepartments = (props: AccordionDepartmentsType) => {
   return (
     <Accordion allowToggle>
       {departmentsTownsState.map((dep) => (
-        <AccordionItem>
+        <AccordionItem key={dep.department}>
           <h2>
             <AccordionButton>
               <Box
@@ -62,9 +62,12 @@ export const AccordionDepartments = (props: AccordionDepartmentsType) => {
             </AccordionButton>
           </h2>
           {dep.townsList.map((town) => (
-            <Link href={linkHref(town.state, town.name)} passHref>
+            <Link
+              href={linkHref(town.state, town.name)}
+              key={town.name}
+              passHref
+            >
               <AccordionPanel
-                key={town.name}
                 _hover={{
                   cursor: "pointer"
                 }}
