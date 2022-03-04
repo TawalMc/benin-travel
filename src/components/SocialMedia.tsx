@@ -18,9 +18,9 @@ export const SocialMedia = () => {
       paddingBottom={"1em"}
       paddingTop={"1em"}
       spacing={"1em"}
-      bgColor={"rgba(90, 90, 90, 0.4)"}
+      /* bgColor={"rgba(90, 90, 90, 0.4)"} */
       w={"48px"}
-      pos={"absolute"}
+      pos={"fixed"}
       right={0}
       zIndex={200}
       bottom={{

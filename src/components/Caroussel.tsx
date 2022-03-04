@@ -114,13 +114,15 @@ const CarousselTop = (
         w={["100%", "100%", "50%"]}
         h={["50%", "50%", "100%"]}
       >
-        <Heading as={"h2"} size={"xl"}>
+        <Heading as={"h2"} size={"lg"}>
           {props.country}
         </Heading>
-        <Heading as={"h3"} size={"lg"}>
+        <Heading as={"h3"} size={"md"}>
           {props.town}, {props.department}
         </Heading>
-        <Text textAlign={"justify"}>{props.description}</Text>
+        <Text size={"sm"} textAlign={"justify"}>
+          {props.description}
+        </Text>
       </VStack>
       <VStack
         /* bgColor={"red.300"} */
@@ -154,7 +156,7 @@ const CarousselTop = (
           </HStack>
           <HStack>
             <Icon as={RiVolumeUpLine} boxSize={"2em"} />
-            <Text>{props.language.toString()}</Text>
+            <Text>{props.language.join(", ")}</Text>
           </HStack>
         </HStack>
       </VStack>
@@ -178,7 +180,7 @@ const CarousselBottom = (props: CarousselBottomProps): JSX.Element => {
         <Link
           color={"#ffffff"}
           href={props.authorLink}
-          pos={"absolute"}
+          pos={"fixed"}
           bottom={"60px"}
           left={"0"}
           isExternal
@@ -191,9 +193,9 @@ const CarousselBottom = (props: CarousselBottomProps): JSX.Element => {
       <HStack
         h={"48px"}
         w={["100%", "100%", "50%"]}
-        /* bgColor={"rgba(255, 51, 51, 0.3)"} */
-        bgColor={"rgba(90, 90, 90, 0.4)"}
-        pos={"absolute"}
+        bgColor={"rgba(255, 51, 51, 0.3)"}
+        /* bgColor={"rgba(90, 90, 90, 0.4)"} */
+        pos={"fixed"}
         bottom={"0"}
         left={"0"}
         justify={"space-around"}
@@ -231,9 +233,9 @@ const CarousselButtons = (props: CarousselButtonsProps) => {
     <Box
       w={"100px"}
       h={"100px"}
-      pos={"absolute"}
+      pos={"fixed"}
       zIndex={100}
-      bottom={"72px"} /* bgColor={"red.100"} */
+      bottom={"50px"} /* bgColor={"red.100"} */
     >
       <HStack
         transform={"translateY(100%)"}

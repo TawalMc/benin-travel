@@ -1,6 +1,7 @@
 import { CarousselTown, DepartmentTownsState } from "@/utils/type"
 import { Asset, Entry, createClient } from "contentful"
 
+import { APP_DATA } from "./constants"
 import { getDepartmentState, numberDaysBetweenDates } from "./libs"
 import { StateType } from "./type"
 
@@ -150,7 +151,10 @@ export const getDepartmentsTownsWithState = async (): Promise<
         // verify update date
         let date1 = new Date(townsUpdate[townIndex].updateAt)
         let date2 = new Date(Date.now())
-        if (numberDaysBetweenDates(date1, date2) <= 6) townState = "new"
+        if (
+          numberDaysBetweenDates(date1, date2) <= APP_DATA.maxDaysBetweenUpdate
+        )
+          townState = "new"
 
         townsUpdate.splice(townIndex, 1)
       }

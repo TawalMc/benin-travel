@@ -2,6 +2,7 @@ import {
   Box,
   Button,
   Icon,
+  IconButton,
   Link,
   Menu,
   MenuButton,
@@ -15,6 +16,7 @@ import {
   RiExternalLinkLine,
   RiEyeLine,
   RiHome3Line,
+  RiMenuLine,
   RiQuestionLine
 } from "react-icons/ri"
 
@@ -22,7 +24,7 @@ import { ModalTowns } from "./ModalTowns"
 
 export const Header = () => {
   return (
-    <Box position={"absolute"} zIndex={200}>
+    <Box position={"fixed"} zIndex={200}>
       <Menu>
         <MenuButton
           _focus={{
@@ -33,12 +35,11 @@ export const Header = () => {
           }}
           bgColor={"white"}
           borderRadius={"none"}
-          as={Button}
-          rightIcon={<Icon as={RiArrowDownSFill} />}
-        >
-          Benin Travel
-        </MenuButton>
+          as={IconButton}
+          icon={<RiMenuLine size={25} />}
+        />
         <MenuList borderRadius={"inherit"}>
+          <MenuItemLink href="/" label="Benin Travel" />
           <MenuItemLink
             icon={<RiHome3Line size={"1.5em"} />}
             label={NAV_ITEMS[0].label}
@@ -89,7 +90,7 @@ const MenuItemLink = ({
 }: {
   href: string
   label: string
-  icon: any
+  icon?: any
 }) => {
   return (
     <MenuItem

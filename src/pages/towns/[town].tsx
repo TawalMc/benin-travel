@@ -1,7 +1,7 @@
 import { Caroussel } from "@/components/Caroussel"
 import { Loading } from "@/components/Loading"
 import { SEO } from "@/components/SEO"
-import { SEOLinks } from "@/utils/constants"
+import { APP_DATA, SEOLinks } from "@/utils/constants"
 import { getAllTowns, getExistingTowns } from "@/utils/contentfulAPI"
 import { useTown } from "@/utils/state"
 import { CarousselTown } from "@/utils/type"
@@ -19,7 +19,7 @@ const Town: NextPage<TownProps> = (props) => {
   const [state, actions] = useTown()
 
   useEffect(() => {
-    if (state.townsList.length !== 77) {
+    if (state.townsList.length !== APP_DATA.benin_towns) {
       actions.updateTownsList(props.townsList)
     }
   })
@@ -34,7 +34,7 @@ const Town: NextPage<TownProps> = (props) => {
         twitterImage={props.townData.children[0].img}
         ogImage={props.townData.children[0].img}
       />
-      <VStack h={"100vh"} w={"100%"}>
+      <VStack h={"100vh"} w={"100%"} pos={"fixed"}>
         <Caroussel {...props.townData} />
       </VStack>
     </AppLayout>

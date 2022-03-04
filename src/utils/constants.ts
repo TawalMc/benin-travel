@@ -26,3 +26,11 @@ export const SEOLinks = {
   twitterImage: "https://benin-travel.vercel.app/benin.jpg",
   brandImage: "https://benin-travel.vercel.app/images/abomey.png"
 }
+
+/**
+ * Other data
+ */
+export const APP_DATA = {
+  benin_towns: 77,
+  maxDaysBetweenUpdate: 7
+}
