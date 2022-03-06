@@ -82,7 +82,10 @@ const Home: NextPage = () => {
               <Subscribe />
             </Stack>
           </Flex>
-          <Flex flex={1} /*  pl={["30px", "0"]} pr={["30px", "0"]} */>
+          <Flex
+            display={{ base: "none", md: "flex" }}
+            flex={1} /*  pl={["30px", "0"]} pr={["30px", "0"]} */
+          >
             <Image
               alt={"Login Image"}
               objectFit={"cover"}

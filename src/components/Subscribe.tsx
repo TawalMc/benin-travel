@@ -1,13 +1,14 @@
 import {
-  Button,
   FormControl,
   FormHelperText,
   FormLabel,
+  IconButton,
   Input,
   InputGroup,
   InputRightElement
 } from "@chakra-ui/react"
 import React, { useRef, useState } from "react"
+import { RiSendPlaneFill } from "react-icons/ri"
 
 export const Subscribe = () => {
   const inputEl = useRef<HTMLInputElement>(null)
@@ -58,8 +59,8 @@ export const Subscribe = () => {
           required
           name={"email"}
         />
-        <InputRightElement w={"30%"}>
-          <Button
+        <InputRightElement w={"10%"}>
+          <IconButton
             h={"99%"}
             bgColor={"yellow.500"}
             rounded={"0"}
@@ -69,9 +70,9 @@ export const Subscribe = () => {
             }}
             type={"submit"}
             onClick={(e) => subscribe(e)}
-          >
-            Souscrire
-          </Button>
+            aria-label={"Subscribe to newsletter"}
+            icon={<RiSendPlaneFill />}
+          />
         </InputRightElement>
       </InputGroup>
       {message.length !== 0 && <FormHelperText>{message}</FormHelperText>}
