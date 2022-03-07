@@ -24,7 +24,7 @@ export type AuthorCredit = {
 
 export type CarousselTownChild = AuthorCredit & {
   description: string
-  img?: string
+  img: string
 }
 
 export type CarousselTown = FirstPartTown &

@@ -1,5 +1,3 @@
-import { Header } from "@/components/Header"
-import { SocialMedia } from "@/components/SocialMedia"
 import React from "react"
 
 type AppLayoutProps = {

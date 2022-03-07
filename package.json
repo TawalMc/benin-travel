@@ -22,7 +22,8 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "^4.3.1",
-    "react-sweet-state": "^2.5.2"
+    "react-sweet-state": "^2.5.2",
+    "swiper": "^8.0.7"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^3.2.0",

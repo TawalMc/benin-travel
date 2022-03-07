@@ -1,7 +1,5 @@
 import { Action, createHook, createStore } from "react-sweet-state"
 
-import { updateIndex } from "./libs"
-
 type State = { currentIndex: number; townsList: string[] }
 type Actions = typeof actions
 
