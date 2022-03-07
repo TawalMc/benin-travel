@@ -67,18 +67,7 @@ const Home: NextPage = () => {
                     Découvrir
                   </Button>
                 </Link>
-                <Link href={"/swiperimages"} passHref>
-                  <Button
-                    rounded={"0"}
-                    bg={"blue.500"}
-                    color={"white"}
-                    _hover={{
-                      bg: "blue.600"
-                    }}
-                  >
-                    SwiperImages
-                  </Button>
-                </Link>
+
                 {/* <Link href={"/about"} passHref>
                   <Button
                     rounded={"0"}
