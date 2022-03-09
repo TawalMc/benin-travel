@@ -32,5 +32,5 @@ export const SEOLinks = {
  */
 export const APP_DATA = {
   benin_towns: 77,
-  maxDaysBetweenUpdate: 7
+  maxDaysBetweenUpdate: 14
 }
