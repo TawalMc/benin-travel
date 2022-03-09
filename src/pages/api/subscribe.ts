@@ -7,7 +7,7 @@ mailchimp.setConfig({
   server: process.env.MAILCHIMP_API_SERVER
 })
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+export const subscribe = async (req: NextApiRequest, res: NextApiResponse) => {
   const { email } = req.body
 
   if (!email) return res.status(400).json({ error: "Email est requise" })
@@ -23,3 +23,5 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     return res.status(500).json({ error: error.message || error.toString() })
   }
 }
+
+export default subscribe

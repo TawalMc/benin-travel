@@ -1,44 +1,31 @@
 import { Media } from "@/utils/constants"
-import { Icon, Link, VStack } from "@chakra-ui/react"
+import { HStack, Icon, Link } from "@chakra-ui/react"
 import React from "react"
 import {
-  RiEarthLine,
-  RiFacebookBoxLine,
   RiFacebookFill,
-  RiFacebookLine,
   RiGithubFill,
-  RiLinkedinFill,
-  RiMailLine,
+  RiMailFill,
   RiTwitterFill
 } from "react-icons/ri"
 
 export const SocialMedia = () => {
   return (
-    <VStack
-      paddingBottom={"1em"}
-      paddingTop={"1em"}
-      spacing={"1em"}
-      /* bgColor={"rgba(90, 90, 90, 0.4)"} */
-      w={"48px"}
-      pos={"fixed"}
-      right={0}
-      zIndex={200}
-      bottom={{
-        base: "64px",
-        md: "0"
-      }}
-    >
+    <HStack px={"2"} mt={"1em"} spacing={"1em"} w={"100%"}>
       <Link href={Media.facebook} isExternal>
-        <Icon as={RiFacebookFill} boxSize={6} color={"#ffffff"} />
+        <Icon as={RiFacebookFill} boxSize={6} color={"#000"} />
+      </Link>
+
+      <Link href={`mailto:${Media.mail}`} isExternal>
+        <Icon as={RiMailFill} boxSize={6} color={"#000"} />
       </Link>
 
       <Link href={Media.twitter} isExternal>
-        <Icon as={RiTwitterFill} boxSize={6} color={"#ffffff"} />
+        <Icon as={RiTwitterFill} boxSize={6} color={"#000"} />
       </Link>
 
       <Link href={Media.github} isExternal>
-        <Icon as={RiGithubFill} boxSize={6} color={"#ffffff"} />
+        <Icon as={RiGithubFill} boxSize={6} color={"#000"} />
       </Link>
-    </VStack>
+    </HStack>
   )
 }

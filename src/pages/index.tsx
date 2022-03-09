@@ -20,7 +20,7 @@ const Home: NextPage = () => {
       <SEO />
       <Box width={"100vw"} height={"100vh"} color={"white"}>
         <Stack minH={"100vh"} direction={{ base: "column", md: "row" }}>
-          <Flex p={8} flex={1} align={"center"} justify={"center"}>
+          <Flex p={10} flex={1} align={"center"} justify={"center"}>
             <Stack spacing={6} w={"full"} maxW={"lg"}>
               <Heading
                 fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}
@@ -57,7 +57,7 @@ const Home: NextPage = () => {
               <Stack direction={{ base: "column", md: "row" }} spacing={4}>
                 <Link href={"/towns/cotonou"} passHref>
                   <Button
-                    rounded={"0"}
+                    rounded={"md"}
                     bg={"yellow.500"}
                     color={"white"}
                     _hover={{

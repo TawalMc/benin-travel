@@ -51,7 +51,7 @@ export const Subscribe = () => {
           placeholder={"Votre email"}
           color={"#000000"}
           colorScheme={"#000000"}
-          rounded={"0"}
+          rounded={"md"}
           _focus={{
             borderColor: "gray.400"
           }}
@@ -63,7 +63,7 @@ export const Subscribe = () => {
           <IconButton
             h={"99%"}
             bgColor={"yellow.500"}
-            rounded={"0"}
+            rounded={"md"}
             w={"100%"}
             _hover={{
               bgColor: "yellow.600"

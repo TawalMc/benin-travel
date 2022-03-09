@@ -1,7 +1,5 @@
 import {
   Box,
-  Button,
-  Icon,
   IconButton,
   Link,
   Menu,
@@ -12,7 +10,6 @@ import {
   useDisclosure
 } from "@chakra-ui/react"
 import {
-  RiArrowDownSFill,
   RiExternalLinkLine,
   RiEyeLine,
   RiHome3Line,
@@ -21,10 +18,11 @@ import {
 } from "react-icons/ri"
 
 import { ModalTowns } from "./ModalTowns"
+import { SocialMedia } from "./SocialMedia"
 
 export const Header = () => {
   return (
-    <Box position={"fixed"} zIndex={200}>
+    <Box position={"fixed"} zIndex={500} top={"25%"}>
       <Menu>
         <MenuButton
           _focus={{
@@ -33,8 +31,10 @@ export const Header = () => {
           _active={{
             bg: "white"
           }}
-          bgColor={"white"}
-          borderRadius={"none"}
+          boxShadow={"lg"}
+          bgColor={"whitesmoke"}
+          backdropFilter={"blur(10px) hue-rotate(90deg)"}
+          rounded={"md"}
           as={IconButton}
           icon={<RiMenuLine size={25} />}
         />
@@ -57,6 +57,7 @@ export const Header = () => {
             label={NAV_ITEMS[2].label}
             href={NAV_ITEMS[2].href}
           />
+          <SocialMedia />
         </MenuList>
       </Menu>
     </Box>

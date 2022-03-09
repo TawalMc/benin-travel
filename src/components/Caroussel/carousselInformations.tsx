@@ -1,13 +1,28 @@
 import { SecondPartTown } from "@/utils/type"
-import { HStack, Icon, Text, useColorModeValue } from "@chakra-ui/react"
+import {
+  HStack,
+  Icon,
+  IconButton,
+  Text,
+  useColorModeValue,
+  useDisclosure
+} from "@chakra-ui/react"
 import { RiCake3Line, RiCommunityLine, RiMoreFill } from "react-icons/ri"
+
+import { CarousselSubInformations } from "./carousselSubInformations"
 
 type CarousselInformationsProps = SecondPartTown & {
   currDescImg: number
   totalDescImg: number
+  type: string
+  people: string
+  language: string[]
+  town: string
 }
 
 export const CarousselInformations = (props: CarousselInformationsProps) => {
+  const { isOpen, onOpen, onClose } = useDisclosure()
+
   return (
     <HStack
       h={"60px"}
@@ -39,7 +54,17 @@ export const CarousselInformations = (props: CarousselInformationsProps) => {
         </Text>
       </HStack>
       <HStack color={"yellow.600"}>
-        <Icon as={RiMoreFill} boxSize={"1.5em"} />
+        <IconButton
+          aria-label={"Open Drawer"}
+          icon={<RiMoreFill size={"1.em"} />}
+          onClick={onOpen}
+          bgColor={"white"}
+        />
+        <CarousselSubInformations
+          {...props}
+          isOpen={isOpen}
+          onClose={onClose}
+        />
       </HStack>
     </HStack>
   )

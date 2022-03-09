@@ -1,4 +1,5 @@
 import { getDepartmentsTownsWithState } from "@/utils/contentfulAPI"
+import { fetcher } from "@/utils/libs"
 import { DepartmentTownsState } from "@/utils/type"
 import {
   Button,
@@ -11,29 +12,31 @@ import {
   ModalOverlay,
   Text
 } from "@chakra-ui/react"
-import { useEffect, useState } from "react"
+import Router from "next/router"
+import useSWR from "swr"
 
 import { AccordionDepartments } from "./AccordionDepartments"
+
+const useDepartmentsTownsState = () => {
+  const { data, error } = useSWR<DepartmentTownsState[]>(
+    "api/departmentsTownsWithState",
+    fetcher
+  )
+
+  return {
+    departmentsTownsState: data,
+    isLoading: !error && !data,
+    isError: error
+  }
+}
 
 type ModalTownsType = { isOpen: boolean; onClose: () => void }
 
 export const ModalTowns = ({ isOpen, onClose }: ModalTownsType) => {
-  const [departmentsTownsState, setDepartmentTownsState] = useState<
-    DepartmentTownsState[] | null
-  >(null)
+  const { departmentsTownsState, isLoading, isError } =
+    useDepartmentsTownsState()
 
-  useEffect(() => {
-    depTownsState()
-  })
-
-  const depTownsState = async () => {
-    try {
-      let depTownsState = await getDepartmentsTownsWithState()
-      setDepartmentTownsState(depTownsState)
-    } catch (error) {
-      console.log(error)
-    }
-  }
+  /* if (isError) Router.push("#") */
 
   return (
     <Modal isOpen={isOpen} onClose={onClose} /* isCentered */>
@@ -46,12 +49,12 @@ export const ModalTowns = ({ isOpen, onClose }: ModalTownsType) => {
         <ModalCloseButton />
 
         <ModalBody>
-          {departmentsTownsState === null ? (
+          {isLoading ? (
             <Text>Loading...</Text>
           ) : (
             <>
               <AccordionDepartments
-                departmentsTownsState={departmentsTownsState}
+                departmentsTownsState={departmentsTownsState!!}
                 onClose={onClose}
               />
             </>

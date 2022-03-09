@@ -1,5 +1,6 @@
 import { VStack } from "@chakra-ui/react"
 import Image from "next/image"
+import { useRouter } from "next/router"
 import { EffectCards } from "swiper"
 import "swiper/css"
 import "swiper/css/effect-cards"
@@ -28,6 +29,9 @@ type CarousselImagesCardsProps = {
 }
 
 export const CarousselImagesCards = (props: CarousselImagesCardsProps) => {
+  const router = useRouter()
+  console.log(router.asPath)
+
   return (
     <Swiper
       effect={"cards"}
@@ -46,7 +50,11 @@ export const CarousselImagesCards = (props: CarousselImagesCardsProps) => {
             justifyContent={"center"}
             bgColor={"inherit"}
           >
-            <Image src={img} layout={"fill"} />
+            <Image
+              alt={`${router.asPath.split("/")[2]} images`}
+              src={img}
+              layout={"fill"}
+            />
           </VStack>
         </SwiperSlide>
       ))}

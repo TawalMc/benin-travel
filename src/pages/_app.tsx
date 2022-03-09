@@ -6,6 +6,7 @@ import { ChakraProvider } from "@chakra-ui/react"
 import type { AppProps } from "next/app"
 import Head from "next/head"
 import { useRouter } from "next/router"
+import NextNProgress from "nextjs-progressbar"
 import { useEffect } from "react"
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -31,7 +32,8 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Header />
-      <SocialMedia />
+      {/* <SocialMedia /> */}
+      <NextNProgress color={"rgb(255, 153, 0)"} />
       <Component {...pageProps} />
     </ChakraProvider>
   )

@@ -7,7 +7,7 @@ export const Media = {
   linkedin: "https://www.linkedin.com/in/tawaliou-alao-26688614b/",
   github: "https://github.com/TawalMc",
   mail: "beninexplorationtravel@gmail.com",
-  website: "http://tawaldevuniverse.vercel.app/"
+  website: "https://tawaldevuniverse.vercel.app/"
 }
 
 export const websiteLinks = {

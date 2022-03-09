@@ -1,4 +1,5 @@
 import { CarousselTownChild, StateType } from "@/utils/type"
+import axios from "axios"
 
 import { TownState } from "./type"
 
@@ -28,3 +29,5 @@ export const extractImgList = (list: CarousselTownChild[]) => {
 export const getTownIndex = (town: string, townList: string[]): number => {
   return townList.findIndex((elt) => elt === town)
 }
+
+export const fetcher = (url: string) => axios.get(url).then((res) => res.data)

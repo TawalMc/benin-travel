@@ -66,7 +66,7 @@ const Town: NextPage<TownProps> = (props) => {
         h={"100vh"}
         py={2}
         bgColor={"rgb(240,240,240)"}
-        spacing={"4%"}
+        spacing={"1em"}
         backdropFilter={"blur(10px) hue-rotate(90deg)"}
       >
         <CarousselDescriptions
