@@ -37,6 +37,7 @@ export const ModalTowns = ({ isOpen, onClose }: ModalTownsType) => {
     useDepartmentsTownsState()
 
   /* if (isError) Router.push("#") */
+  if (isLoading) return <Text>Loading...</Text>
 
   return (
     <Modal isOpen={isOpen} onClose={onClose} /* isCentered */>
@@ -49,7 +50,7 @@ export const ModalTowns = ({ isOpen, onClose }: ModalTownsType) => {
         <ModalCloseButton />
 
         <ModalBody>
-          {isLoading ? (
+          {departmentsTownsState === undefined ? (
             <Text>Loading...</Text>
           ) : (
             <>
