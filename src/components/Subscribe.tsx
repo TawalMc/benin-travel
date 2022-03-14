@@ -38,10 +38,10 @@ export const Subscribe = () => {
 
   return (
     <FormControl>
-      <FormLabel color={"#000000"} fontWeight={"bold"}>
+      <FormLabel color={"yellow.500"} fontSize={"3xl"} fontWeight={"bold"}>
         Souscrire à la newsletter
       </FormLabel>
-      <FormHelperText lineHeight={1.5} mb={"8px"}>
+      <FormHelperText lineHeight={1.5} mb={"8px"} color={"#000000"}>
         Recevez des mails sur les mises à jour de Benin Travel
       </FormHelperText>
       <InputGroup size={"md"}>
@@ -49,8 +49,8 @@ export const Subscribe = () => {
           pr={"4.5rem"}
           type={"email"}
           placeholder={"Votre email"}
-          color={"#000000"}
-          colorScheme={"#000000"}
+          color={"#000"}
+          colorScheme={"#000"}
           rounded={"md"}
           _focus={{
             borderColor: "gray.400"

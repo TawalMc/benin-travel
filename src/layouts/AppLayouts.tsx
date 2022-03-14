@@ -1,3 +1,4 @@
+import { Header } from "@/components/Header"
 import React from "react"
 
 type AppLayoutProps = {
@@ -5,5 +6,10 @@ type AppLayoutProps = {
 }
 
 export const AppLayout = ({ children }: AppLayoutProps) => {
-  return <>{children}</>
+  return (
+    <>
+      <Header />
+      {children}
+    </>
+  )
 }

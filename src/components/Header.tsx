@@ -9,11 +9,11 @@ import {
   MenuList,
   useDisclosure
 } from "@chakra-ui/react"
+import { useRouter } from "next/router"
 import {
   RiExternalLinkLine,
   RiEyeLine,
   RiHome3Line,
-  RiMenuLine,
   RiQuestionLine
 } from "react-icons/ri"
 
@@ -22,23 +22,34 @@ import { SocialMedia } from "./SocialMedia"
 
 export const Header = () => {
   return (
-    <Box position={"fixed"} zIndex={500} top={"25%"}>
+    <Box
+      position={"fixed"}
+      zIndex={500}
+      left={{ base: "10", md: "40" }}
+      top={{ base: "3", md: "7" }}
+    >
       <Menu>
         <MenuButton
           _focus={{
-            bg: "white"
+            bg: "none"
           }}
           _active={{
-            bg: "white"
+            bg: "none"
           }}
-          boxShadow={"lg"}
-          bgColor={"whitesmoke"}
-          backdropFilter={"blur(10px) hue-rotate(90deg)"}
-          rounded={"md"}
-          as={IconButton}
-          icon={<RiMenuLine size={25} />}
-        />
-        <MenuList borderRadius={"inherit"}>
+          px={5}
+          py={1}
+          borderWidth={"2px"}
+          borderColor={"yellow.500"}
+          borderRadius={"50"}
+          color={"white"}
+          fontWeight={"bold"}
+          _hover={{
+            bg: "none"
+          }}
+        >
+          Menu
+        </MenuButton>
+        <MenuList rounded={"md"}>
           <MenuItemLink href="/" label="Benin Travel" />
           <MenuItemLink
             icon={<RiHome3Line size={"1.5em"} />}
@@ -93,15 +104,16 @@ const MenuItemLink = ({
   label: string
   icon?: any
 }) => {
+  const router = useRouter()
   return (
     <MenuItem
-      as={Link}
+      /* as={Link} */
       _hover={{
         textDecoration: "none",
         fontWeight: "bold",
         border: "none"
       }}
-      href={href}
+      onClick={() => router.push(href)}
       icon={icon}
     >
       {label}

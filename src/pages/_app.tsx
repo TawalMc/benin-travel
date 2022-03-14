@@ -31,8 +31,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <Header />
-      {/* <SocialMedia /> */}
       <NextNProgress color={"rgb(255, 153, 0)"} />
       <Component {...pageProps} />
     </ChakraProvider>
