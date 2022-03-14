@@ -29,7 +29,7 @@ const Home: NextPage = () => {
           bgImage={
             "linear-gradient(rgb(90, 90, 90, 0.5), rgba(0, 0, 0, 0.5)), url(https://benin-travel.vercel.app/images/abomey.png)"
           }
-          bgAttachment={"fixed"}
+          bgAttachment={{ base: "scroll", md: "fixed" }}
           bgRepeat={"no-repeat"}
           bgSize={"cover"}
           bgColor={"black"}
