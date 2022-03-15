@@ -1,4 +1,4 @@
-import { ScrollTags } from "@/components/scroll/ScrollTags"
+import { ScrollTags } from "@/components/ScrollTownChild/ScrollTags"
 import {
   Box,
   Divider,

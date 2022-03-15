@@ -1,8 +1,11 @@
 import {
   ScrollBottom,
   ScrollBottomProps
-} from "@/components/scroll/ScrollBottom"
-import { ScrollTop, ScrollTopProps } from "@/components/scroll/ScrollTop"
+} from "@/components/ScrollTownChild/ScrollBottom"
+import {
+  ScrollTop,
+  ScrollTopProps
+} from "@/components/ScrollTownChild/ScrollTop"
 import { VStack } from "@chakra-ui/react"
 
 type ScrollCardProps = {
