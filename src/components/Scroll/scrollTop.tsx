@@ -1,6 +1,5 @@
+import { ScrollTags } from "@/components/Scroll/ScrollTags"
 import { Box, Image, Link, Text, VStack } from "@chakra-ui/react"
-
-import { ScrollTags } from "./ScrollTags"
 
 export type ScrollTopProps = {
   author: string

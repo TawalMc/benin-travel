@@ -1,3 +1,4 @@
+import { ScrollTags } from "@/components/Scroll/ScrollTags"
 import {
   Box,
   Divider,
@@ -18,8 +19,6 @@ import {
   RiTrophyLine,
   RiVolumeUpLine
 } from "react-icons/ri"
-
-import { ScrollTags } from "./ScrollTags"
 
 export type ScrollInfosPropsAttribute = {
   type: string
