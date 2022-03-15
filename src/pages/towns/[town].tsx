@@ -1,10 +1,7 @@
-import { CarousselAthorsAndButtons } from "@/components/Caroussel/carousselAuthorsAndButtons"
-import { CarousselDescriptions } from "@/components/Caroussel/carousselDescriptions"
-import { CarousselImagesCards } from "@/components/Caroussel/carousselImagesCards"
-import { CarousselInformations } from "@/components/Caroussel/carousselInformations"
 import { Loading } from "@/components/Loading"
+import { NavigationButtons } from "@/components/NavigationButtons"
 import { SEO } from "@/components/SEO"
-import { ScrollCard } from "@/components/Scroll/scrollCard"
+import { ScrollCard } from "@/components/Scroll/ScrollCard"
 import { APP_DATA, SEOLinks } from "@/utils/constants"
 import { getAllTowns, getExistingTowns } from "@/utils/contentfulAPI"
 import { extractImgList, getTownIndex, updateIndex } from "@/utils/libs"
@@ -15,9 +12,6 @@ import { AppLayout } from "layouts/AppLayouts"
 import { GetServerSideProps, NextPage } from "next"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
-
-const textTest =
-  "Cotonou est une grande ville portuaire située sur la côte sud du Bénin, en Afrique de l'Ouest. À l'extrémité orientale du boulevard central St. Michel se trouve l'immense marché Dantokpa."
 
 type TownProps = { townData: CarousselTown; townsList: string[] }
 
@@ -59,6 +53,7 @@ const Town: NextPage<TownProps> = (props) => {
         twitterImage={props.townData.children[0].img}
         ogImage={props.townData.children[0].img}
       />
+      <NavigationButtons changeTown={changeTown} />
       <Box
         w={"100vw"}
         h={"100vh"}
@@ -79,32 +74,6 @@ const Town: NextPage<TownProps> = (props) => {
 }
 
 export default Town
-
-/* 
-const commentComp = () => {
-  return (
-    <>
-      <CarousselDescriptions
-        description={props.townData.children[currDescImg].description}
-        {...props.townData}
-      />
-      <CarousselImagesCards
-        updateCarousselImgIndex={updateCarousselImgIndex}
-        imgList={extractImgList(props.townData.children)}
-      />
-      <CarousselAthorsAndButtons
-        changeTown={changeTown}
-        {...props.townData.children[currDescImg]}
-      />
-      <CarousselInformations
-        currDescImg={currDescImg + 1}
-        totalDescImg={props.townData.children.length}
-        {...props.townData}
-      />
-    </>
-  )
-}
- */
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   try {

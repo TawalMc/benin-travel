@@ -1,7 +1,7 @@
 import { Button, HStack, useDisclosure } from "@chakra-ui/react"
 import { RiMoreFill } from "react-icons/ri"
 
-import { ScrollInfos, ScrollInfosPropsAttribute } from "./scrollInfos"
+import { ScrollInfos, ScrollInfosPropsAttribute } from "./ScrollInfos"
 
 export type ScrollBottomProps = ScrollInfosPropsAttribute
 

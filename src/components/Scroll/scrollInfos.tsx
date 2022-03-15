@@ -3,6 +3,7 @@ import {
   Divider,
   Drawer,
   DrawerBody,
+  DrawerCloseButton,
   DrawerContent,
   DrawerHeader,
   DrawerOverlay,
@@ -18,7 +19,7 @@ import {
   RiVolumeUpLine
 } from "react-icons/ri"
 
-import { ScrollTags } from "./scrollTags"
+import { ScrollTags } from "./ScrollTags"
 
 export type ScrollInfosPropsAttribute = {
   type: string
@@ -45,6 +46,7 @@ export const ScrollInfos = (props: ScrollInfosProps) => {
     <Drawer placement={"bottom"} isOpen={props.isOpen} onClose={props.onClose}>
       <DrawerOverlay />
       <DrawerContent>
+        <DrawerCloseButton />
         <DrawerHeader fontWeight={"bold"}>{props.town}</DrawerHeader>
 
         <DrawerBody>
