@@ -1,4 +1,4 @@
-import { Box, Button, Image, Link, Tag, Text, VStack } from "@chakra-ui/react"
+import { Box, Image, Link, Text, VStack } from "@chakra-ui/react"
 
 import { ScrollTags } from "./ScrollTags"
 
