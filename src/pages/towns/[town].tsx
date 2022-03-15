@@ -66,10 +66,11 @@ const Town: NextPage<TownProps> = (props) => {
         overflowY={"scroll"}
         px={"2vw"}
       >
-        {props.townData.children.map((child) => (
+        {props.townData.children.map((child, index) => (
           <ScrollCard
             top={{ ...child, town: props.townData.town }}
             bottom={{ ...props.townData, ...child }}
+            key={props.townData.children[index].img}
           />
         ))}
       </Box>

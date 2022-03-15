@@ -29,6 +29,7 @@ export const ScrollTags = (props: ScrollTagsProps) => {
             borderRadius={"full"}
             colorScheme={TagsColors[index]}
             m={2}
+            key={tag}
           >
             {tag}
           </Tag>
