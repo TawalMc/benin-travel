@@ -6,7 +6,6 @@ import { Box, Button, Heading, Stack, Text } from "@chakra-ui/react"
 import { AppLayout } from "layouts/AppLayouts"
 import type { NextPage } from "next"
 import Link from "next/link"
-import Particles from "react-tsparticles"
 
 const Home: NextPage = () => {
   return (

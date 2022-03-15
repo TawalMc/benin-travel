@@ -4,12 +4,13 @@ import { CarousselImagesCards } from "@/components/Caroussel/carousselImagesCard
 import { CarousselInformations } from "@/components/Caroussel/carousselInformations"
 import { Loading } from "@/components/Loading"
 import { SEO } from "@/components/SEO"
+import { ScrollCard } from "@/components/Scroll/scrollCard"
 import { APP_DATA, SEOLinks } from "@/utils/constants"
 import { getAllTowns, getExistingTowns } from "@/utils/contentfulAPI"
 import { extractImgList, getTownIndex, updateIndex } from "@/utils/libs"
 import { useTown } from "@/utils/state"
 import { CarousselTown } from "@/utils/type"
-import { VStack } from "@chakra-ui/react"
+import { Box, List, VStack } from "@chakra-ui/react"
 import { AppLayout } from "layouts/AppLayouts"
 import { GetServerSideProps, NextPage } from "next"
 import { useRouter } from "next/router"
@@ -44,9 +45,6 @@ const Town: NextPage<TownProps> = (props) => {
       state.currentIndex + unit,
       state.townsList.length
     )
-    /* actions.updateTown(townIndex) */
-
-    // console.log(`/towns/${state.townsList[townIndex].toLowerCase()}`)
 
     router.push(`/towns/${state.townsList[townIndex].toLowerCase()}`)
   }
@@ -61,37 +59,51 @@ const Town: NextPage<TownProps> = (props) => {
         twitterImage={props.townData.children[0].img}
         ogImage={props.townData.children[0].img}
       />
-      <VStack
-        w={"100%"}
+      <Box
+        w={"100vw"}
         h={"100vh"}
-        py={2}
-        bgColor={"rgb(240,240,240)"}
-        spacing={"1em"}
-        backdropFilter={"blur(10px) hue-rotate(90deg)"}
+        overflow={"hidden"}
+        overflowY={"scroll"}
+        px={"2vw"}
       >
-        <CarousselDescriptions
-          description={props.townData.children[currDescImg].description}
-          {...props.townData}
-        />
-        <CarousselImagesCards
-          updateCarousselImgIndex={updateCarousselImgIndex}
-          imgList={extractImgList(props.townData.children)}
-        />
-        <CarousselAthorsAndButtons
-          changeTown={changeTown}
-          {...props.townData.children[currDescImg]}
-        />
-        <CarousselInformations
-          currDescImg={currDescImg + 1}
-          totalDescImg={props.townData.children.length}
-          {...props.townData}
-        />
-      </VStack>
+        {props.townData.children.map((child) => (
+          <ScrollCard
+            top={{ ...child, town: props.townData.town }}
+            bottom={{ ...props.townData, ...child }}
+          />
+        ))}
+      </Box>
     </AppLayout>
   )
 }
 
 export default Town
+
+/* 
+const commentComp = () => {
+  return (
+    <>
+      <CarousselDescriptions
+        description={props.townData.children[currDescImg].description}
+        {...props.townData}
+      />
+      <CarousselImagesCards
+        updateCarousselImgIndex={updateCarousselImgIndex}
+        imgList={extractImgList(props.townData.children)}
+      />
+      <CarousselAthorsAndButtons
+        changeTown={changeTown}
+        {...props.townData.children[currDescImg]}
+      />
+      <CarousselInformations
+        currDescImg={currDescImg + 1}
+        totalDescImg={props.townData.children.length}
+        {...props.townData}
+      />
+    </>
+  )
+}
+ */
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   try {

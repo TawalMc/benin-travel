@@ -30,22 +30,14 @@ export const Header = () => {
     >
       <Menu>
         <MenuButton
-          _focus={{
-            bg: "none"
-          }}
-          _active={{
-            bg: "none"
-          }}
           px={5}
           py={1}
+          bg={"yellow.500"}
           borderWidth={"2px"}
           borderColor={"yellow.500"}
           borderRadius={"50"}
           color={"white"}
           fontWeight={"bold"}
-          _hover={{
-            bg: "none"
-          }}
         >
           Menu
         </MenuButton>
