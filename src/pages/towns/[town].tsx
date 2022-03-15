@@ -1,7 +1,7 @@
 import { Loading } from "@/components/Loading"
 import { NavigationButtons } from "@/components/NavigationButtons"
 import { SEO } from "@/components/SEO"
-import { ScrollCard } from "@/components/Scroll/ScrollCard"
+import { ScrollCard } from "@/components/scroll/ScrollCard"
 import { APP_DATA, SEOLinks } from "@/utils/constants"
 import { getAllTowns, getExistingTowns } from "@/utils/contentfulAPI"
 import { extractImgList, getTownIndex, updateIndex } from "@/utils/libs"

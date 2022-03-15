@@ -1,7 +1,7 @@
 import {
   ScrollInfos,
   ScrollInfosPropsAttribute
-} from "@/components/Scroll/ScrollInfos"
+} from "@/components/scroll/ScrollInfos"
 import { Button, HStack, useDisclosure } from "@chakra-ui/react"
 import { RiMoreFill } from "react-icons/ri"
 
