@@ -1,5 +1,7 @@
 import { ScrollTags } from "@/components/ScrollTownChild/ScrollTags"
-import { Box, Image, Link, Text, VStack } from "@chakra-ui/react"
+import { Box, Image, Link, Text, VStack, propNames } from "@chakra-ui/react"
+
+import { ScrollAuthor } from "./ScrollAuthor"
 
 export type ScrollTopProps = {
   author: string
@@ -19,7 +21,7 @@ export const ScrollTop = ({
   return (
     <VStack
       borderTopRadius={"lg"}
-      bgColor={"black"}
+      bgColor={"rgb(240,240,240, 0.5)"}
       backdropFilter={"blur(10px) hue-rotate(90deg)"}
       w={"100%"}
       h={"90%"}
@@ -32,25 +34,9 @@ export const ScrollTop = ({
         borderTopRadius={"lg"}
         alt="abomey"
       />
-
-      {author !== "any" && (
-        <Link
-          color={"#000"}
-          href={authorLink}
-          isExternal
-          fontStyle={"italic"}
-          fontSize={"sm"}
-          fontWeight={"bold"}
-          textTransform={"lowercase"}
-          position={"absolute"}
-          zIndex={200}
-          top={2}
-          right={2}
-        >
-          @{author}
-        </Link>
-      )}
-
+      <Box position={"absolute"} zIndex={200} top={2} right={2}>
+        <ScrollAuthor author={author} authorLink={authorLink} />
+      </Box>
       <Box
         w={"100%"}
         position={"absolute"}

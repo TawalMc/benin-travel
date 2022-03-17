@@ -7,8 +7,10 @@ import { getAllTowns, getExistingTowns } from "@/utils/contentfulAPI"
 import { extractImgList, getTownIndex, updateIndex } from "@/utils/libs"
 import { useTown } from "@/utils/state"
 import { CarousselTown } from "@/utils/type"
-import { Box, List, VStack } from "@chakra-ui/react"
+import { Box, List, VStack, useMediaQuery } from "@chakra-ui/react"
 import { AppLayout } from "layouts/AppLayouts"
+import { DisplayOnLaptop } from "layouts/DisplayOnLaptop"
+import { DisplayOnMobile } from "layouts/DisplayOnMobile"
 import { GetServerSideProps, NextPage } from "next"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
@@ -18,7 +20,9 @@ type TownProps = { townData: CarousselTown; townsList: string[] }
 const Town: NextPage<TownProps> = (props) => {
   const router = useRouter()
   const [state, actions] = useTown()
-  const [currDescImg, setCurrDescImg] = useState<number>(0)
+  const [isSmallScreen] = useMediaQuery("(max-width: 767px)")
+
+  console.log(isSmallScreen)
 
   useEffect(() => {
     if (state.townsList.length !== APP_DATA.benin_towns) {
@@ -26,12 +30,6 @@ const Town: NextPage<TownProps> = (props) => {
     }
     actions.updateTown(getTownIndex(props.townData.town, props.townsList))
   })
-
-  // console.log(state.currentIndex)
-
-  const updateCarousselImgIndex = (newIndex?: number) => {
-    setCurrDescImg(newIndex ?? 0)
-  }
 
   const changeTown = (next: boolean) => {
     const unit = next ? 1 : -1
@@ -61,13 +59,13 @@ const Town: NextPage<TownProps> = (props) => {
         overflowY={"scroll"}
         px={"2vw"}
       >
-        {props.townData.children.map((child, index) => (
-          <ScrollCard
-            top={{ ...child, town: props.townData.town }}
-            bottom={{ ...props.townData, ...child }}
-            key={props.townData.children[index].img}
-          />
-        ))}
+        {isSmallScreen ? (
+          <>
+            <DisplayOnMobile townData={props.townData} />
+          </>
+        ) : (
+          <DisplayOnLaptop townData={props.townData} />
+        )}
       </Box>
     </AppLayout>
   )

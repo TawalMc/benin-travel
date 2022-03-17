@@ -5,7 +5,9 @@ import {
 import { Button, HStack, useDisclosure } from "@chakra-ui/react"
 import { RiMoreFill } from "react-icons/ri"
 
-export type ScrollBottomProps = ScrollInfosPropsAttribute
+export type ScrollBottomProps = ScrollInfosPropsAttribute & {
+  drawerLocation?: "bottom" | "right"
+}
 
 export const ScrollBottom = (props: ScrollBottomProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -15,6 +17,8 @@ export const ScrollBottom = (props: ScrollBottomProps) => {
       px={5}
       w={"100%"}
       justify={"flex-end"} /* justify={"space-between"} */
+      /* bgColor={"red"} */
+      height={"10%"}
     >
       {/* <DoNotDeleteThis /> */}
       <Button
@@ -25,7 +29,12 @@ export const ScrollBottom = (props: ScrollBottomProps) => {
         leftIcon={<RiMoreFill size={30} />}
         onClick={onOpen}
       ></Button>
-      <ScrollInfos {...props} isOpen={isOpen} onClose={onClose} />
+      <ScrollInfos
+        {...props}
+        isOpen={isOpen}
+        onClose={onClose}
+        drawerLocation={props.drawerLocation}
+      />
     </HStack>
   )
 }

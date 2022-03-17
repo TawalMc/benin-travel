@@ -8,6 +8,7 @@ import {
   DrawerContent,
   DrawerHeader,
   DrawerOverlay,
+  DrawerProps,
   HStack,
   Icon,
   Text
@@ -20,6 +21,8 @@ import {
   RiVolumeUpLine
 } from "react-icons/ri"
 
+import { ScrollAuthor } from "./ScrollAuthor"
+
 export type ScrollInfosPropsAttribute = {
   type: string
   people: string
@@ -31,6 +34,8 @@ export type ScrollInfosPropsAttribute = {
   department: string
   country: string
   tagsList?: string[]
+  author: string
+  authorLink: string
 }
 
 type ScrollInfosPropsFunc = {
@@ -38,11 +43,18 @@ type ScrollInfosPropsFunc = {
   onClose: () => void
 }
 
-type ScrollInfosProps = ScrollInfosPropsAttribute & ScrollInfosPropsFunc
+type ScrollInfosProps = ScrollInfosPropsAttribute &
+  ScrollInfosPropsFunc & {
+    drawerLocation?: "bottom" | "right"
+  }
 
 export const ScrollInfos = (props: ScrollInfosProps) => {
   return (
-    <Drawer placement={"bottom"} isOpen={props.isOpen} onClose={props.onClose}>
+    <Drawer
+      placement={props.drawerLocation}
+      isOpen={props.isOpen}
+      onClose={props.onClose}
+    >
       <DrawerOverlay />
       <DrawerContent>
         <DrawerCloseButton />
@@ -66,6 +78,11 @@ export const ScrollInfos = (props: ScrollInfosProps) => {
             </HStack>
             <Text textAlign={"justify"} px={2}>
               {props.description}
+              &nbsp;
+              <ScrollAuthor
+                author={props.author}
+                authorLink={props.authorLink}
+              />
             </Text>
           </Box>
           <Divider my={4} />

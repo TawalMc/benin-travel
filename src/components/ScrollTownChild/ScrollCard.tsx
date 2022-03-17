@@ -11,6 +11,9 @@ import { VStack } from "@chakra-ui/react"
 type ScrollCardProps = {
   top: ScrollTopProps
   bottom: ScrollBottomProps
+  height?: string
+  width?: string
+  drawerLocation?: "bottom" | "right"
 }
 
 export const ScrollCard = (props: ScrollCardProps) => {
@@ -19,12 +22,22 @@ export const ScrollCard = (props: ScrollCardProps) => {
       bgColor={"rgb(240,240,240, 0.5)"}
       borderWidth={"1px"}
       rounded={"lg"}
-      h={"75vh"}
-      w={"96vw"}
+      h={props.height}
+      w={props.width}
+      /* h={"75vh"}
+      w={"96vw"} */
+      spacing={0}
       my={8}
     >
-      <ScrollTop {...props.top} />
-      <ScrollBottom {...props.bottom} />
+      <ScrollTop
+        {...props.top}
+        /* tagsList={["restaurant", "marché", "historique", "tradition"]} */
+      />
+      <ScrollBottom
+        {...props.bottom}
+        drawerLocation={props.drawerLocation}
+        /* tagsList={["restaurant", "marché", "historique", "tradition"]} */
+      />
     </VStack>
   )
 }

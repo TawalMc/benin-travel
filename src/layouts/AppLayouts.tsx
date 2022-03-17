@@ -1,5 +1,4 @@
 import { Header } from "@/components/Header"
-import React from "react"
 
 type AppLayoutProps = {
   children: React.ReactNode
