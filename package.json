@@ -13,6 +13,7 @@
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
     "@mailchimp/mailchimp_marketing": "^3.0.74",
+    "@supabase/supabase-js": "^1.31.1",
     "@types/google.analytics": "^0.0.42",
     "axios": "^0.26.0",
     "contentful": "^9.1.10",
